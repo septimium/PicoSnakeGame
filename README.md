@@ -40,9 +40,9 @@ This projects resembles the classic Snake Game from the Nokia phones, having the
 
 ### Usage of components
 
-- **Joystick Module** is used for controlling the snake (interacting with the game) and it's connected to ADC pins such that the analog voltage is converted to digital values.
-- **Passive Buzzer** is used for *beeping* in various situations (sound feedback from the game).
-- **Nokia 5110 Display** is used for displaying the game itself.
+- **Joystick Module** is used for controlling the snake and it's connected to ADC pins such that the analog voltage is converted to digital values.
+- **Passive Buzzer** is used for *beeping* in various situations (sound feedback).
+- **Nokia 5110 Display** is used for displaying the game.
 - **TM1637 Module** is used for keeping track of the score while playing.
 - **Raspberry Pi Pico H** is used as the main component (microcontroller) responsible for processing input data.
 - **Breadboard** is used for connecting every pin of the hardware components.
