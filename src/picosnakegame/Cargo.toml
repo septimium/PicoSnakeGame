@@ -1,0 +1,38 @@
+[package]
+name = "picosnakegame"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+cortex-m-rt = "0.7.3"
+cortex-m = "=0.7.7"
+embassy-executor = { version = "0.5.0", features = ["arch-cortex-m", "executor-thread", "executor-interrupt", "integrated-timers"] }
+embassy-time = "0.3.0"
+embassy-rp = { version = "0.1.0", features = ["time-driver", "critical-section-impl"] }
+defmt = "0.3"  
+log = "0.4.21"
+embassy-usb-logger = "0.1.0"
+embassy-sync = "0.5.0"
+embassy-futures = "0.1.1"
+embedded-hal = "1.0.0"
+rp2040-hal = "0.10.0"
+heapless = "0.8.0"
+tm1637-embedded-hal = { version = "0.1.0", default-features = false, features = [
+    "async",
+    "demo",
+] }
+defmt-rtt = "0.4"
+embedded-graphics = "0.7.1"
+
+rand = { version = "0.8.5", default-features = false, features = [ "small_rng" ]}
+
+[dependencies.embedded-snake]
+git = "https://github.com/septimium/embedded-snake-rs"
+
+[dependencies.pcd8544]
+git = "https://github.com/septimium/pcd8544-embassy-rp"
+features=["textmode", "graphics"]
+
+
