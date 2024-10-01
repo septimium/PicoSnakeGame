@@ -1,5 +1,5 @@
 # Pico Snake Game ~ Finished on 30th of May 2024
-A game in rust for embedded systems that resembles the classic Snake Game from the Nokia phones. 
+A game in rust for embedded systems that resembles the classic Snake Game from the Nokia phones. \n
 ***ONLY FOR RP2040 MICROCONTROLLERS***
 
 ## Description
