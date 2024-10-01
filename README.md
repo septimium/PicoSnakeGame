@@ -50,3 +50,43 @@ This projects resembles the classic Snake Game from the Nokia phones, having the
 ### Schematics
 
 ![kicadschematic](assets/kicad/Schematic.svg)
+
+## Software
+
+| Library | Description | Usage |
+|---------|-------------|-------|
+| [embassy](https://github.com/embassy-rs/embassy) | Rust framework for embedded programming |  Used for writing correct, safe and asynchronous code, particularly targeted at embedded systems |
+| [pcd8544 (modified)](https://github.com/septimium/pcd8544-embassy-rp) | Rust crate for PCD8544 displays forked and modified so it is compatible with embedded-graphics | Used for initiliazing and writing on the PCD8544 display |
+| [tm1637-embedded-hal](https://crates.io/crates/tm1637-embedded-hal) | Rust crate for TM1637 microcontroller | Used for controlling the TM1637 module |
+| [embedded-snake (modified)](https://github.com/septimium/embedded-snake-rs) | Rust crate for Snake Game mechanics forked and modified so it has more functions | Used for implementation of the proper Snake Game |
+| [rand](https://crates.io/crates/rand) | Rust crate for random number generating | Used for creating a random position for the "food" |
+| [embedded-graphics](https://crates.io/crates/embedded-graphics) | Rust crate for drawing graphics on small displays | Used for displaying the game |
+
+## How to build and run on the RP2040 chip
+
+Assuming you have made all the connections right, you can safely follow the next steps:
+
+Firstly, we have to compile the project using `cargo build`.
+```shell
+cargo build
+```
+
+Then, you will need to compile your executable specifically for the RP2040 chip. This chip is based on the ARM Cortex M0+ architecture, so you need to specify our target when compiling.
+```shell
+cargo build --release --target thumbv6m-none-eabi
+```
+
+After the build is finished, make sure your RP2040 chip is in **BOOT MODE**. To put it in this mode, you need to **hold the `BOOTSEL` button down**  while connecting it to your PC.
+
+After connecting the board to your PC and compiling the program, locate the binary in the `target/thumbv6m-none-eabi/release/` folder then, run:
+
+```shell
+elf2uf2-rs -d -s /path/to/your/binary
+```
+
+* `-d` to automatically deploy to a mounted pico
+* `-s` to open the pico as a serial device after deploy and print serial output
+  
+On `Windows`, you may need to run this command in a terminal that has **Admin Privileges**.
+
+That's it. You can now play the game!
