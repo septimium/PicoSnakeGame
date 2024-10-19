@@ -5,11 +5,11 @@ A game written in rust for embedded systems that resembles the classic Nokia Sna
 
 This projects resembles the classic Nokia Snake Game. You control the Snake using a 2-axis joystick. Your score is updated live on a 4 digit display (maximum score is 9999, then it resets). For every interaction with "food", a buzzer will play a sound. If you eat yourself, it's game over and you have to start again. You can also pass through walls (clearly a choice, not a bug!). The game itself is displayed on an actual Nokia 5110 LCD-like display. Good luck and enjoy!
 
-## Architecture 
+## Architecture
 
 ![architecture](assets/hardware/Architecture.png)
 
-## Hardware
+## Hardware Example
 ### Pictures
 <table>
 <tr>
@@ -47,7 +47,7 @@ This projects resembles the classic Nokia Snake Game. You control the Snake usin
 - **Raspberry Pi Pico H** is used as the main component (microcontroller) responsible for processing input data.
 - **Breadboard** is used for connecting every pin of the hardware components.
 
-### Schematics
+### Schematics Example
 
 ![kicadschematic](assets/kicad/Schematic.svg)
 
